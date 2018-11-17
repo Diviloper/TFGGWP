@@ -4,15 +4,33 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { PageLogin } from 'src/pages/login/login';
+import { PageRegister } from 'src/pages/register/register';
+import { Routes, RouterModule } from '@angular/router';
 
+
+const appRoutes: Routes = [
+  {
+    path: '',
+    component: PageLogin
+  }, {
+      path: 'register',
+      component: PageRegister,
+
+  }, {
+      path: 'home',
+      component: PageLogin
+  }
+]
 @NgModule({
   declarations: [
-    AppComponent, PageLogin
+    AppComponent, PageLogin, PageRegister
   ],
   imports: [
+    RouterModule.forRoot(appRoutes),
     BrowserModule,
-    FormsModule
+    FormsModule,
   ],
+  exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent]
 })
