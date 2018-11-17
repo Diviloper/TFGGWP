@@ -1,9 +1,9 @@
 <div class="register">
     <div class="register-title">
-        TFGGWP
+        TFGGEz
     </div>
     <div class="register-input">
-        <input type="text" placeholder="Email" [(ngModel)]="email">
+        <input type="email" placeholder="Email" [(ngModel)]="email">
         <input type="password" placeholder="Password" [(ngModel)]="password">
 
       <div>
@@ -11,11 +11,10 @@
       </div>
       <div>
         <input type="radio" [value]="true" [(ngModel)]="professor"> Professor
-      </div>
 
     </div>
     <div class="register-buttons">
-        <button class="register-buttons-register" routerLink="/register">REGISTER</button>
+        <button class="register-buttons-register" (click)="onRegister()" >REGISTER</button>
     </div>
 </div>
 

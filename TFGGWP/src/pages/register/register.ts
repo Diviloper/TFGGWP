@@ -12,4 +12,9 @@ export class PageRegister {
     professor = false;
 
     constructor(private router: Router) {}
+
+  onRegister() {
+    // mirar que email i password estiguin be
+    this.router.navigate(['/']);
+  }
 }
