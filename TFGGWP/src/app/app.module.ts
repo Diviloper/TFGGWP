@@ -7,6 +7,8 @@ import { PageLogin } from 'src/pages/login/login';
 import { PageRegister } from 'src/pages/register/register';
 import { Routes, RouterModule } from '@angular/router';
 import { Navbar } from 'src/pages/navbar/navbar';
+import { UserService } from 'src/pages/services/login.service';
+import { PageHome } from 'src/pages/home/home';
 
 
 const appRoutes: Routes = [
@@ -19,7 +21,7 @@ const appRoutes: Routes = [
 
   }, {
       path: 'home',
-      component: PageLogin
+      component: PageHome,
   }
 ]
 @NgModule({
@@ -28,6 +30,7 @@ const appRoutes: Routes = [
     PageLogin, 
     PageRegister,
     Navbar,
+    PageHome,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -35,7 +38,7 @@ const appRoutes: Routes = [
     FormsModule,
   ],
   exports: [RouterModule],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
