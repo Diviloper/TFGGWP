@@ -7,8 +7,10 @@ import { PageLogin } from 'src/pages/login/login';
 import { PageRegister } from 'src/pages/register/register';
 import { Routes, RouterModule } from '@angular/router';
 import { Navbar } from 'src/pages/navbar/navbar';
-import { UserService } from 'src/pages/services/login.service';
+import { UserService } from 'src/pages/services/user.service';
 import { PageHome } from 'src/pages/home/home';
+import { LoginService } from 'src/pages/login/login.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 const appRoutes: Routes = [
@@ -36,9 +38,11 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     BrowserModule,
     FormsModule,
+    HttpClientModule,
   ],
   exports: [RouterModule],
-  providers: [UserService],
+  providers: [UserService,
+    LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

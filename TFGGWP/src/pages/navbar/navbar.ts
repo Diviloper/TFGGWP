@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../services/login.service';
+import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -22,7 +22,6 @@ export class Navbar implements OnInit {
     }
 
     showDropdown() {
-        document.getElementById('myDropdown').classList.toggle("show");
-        console.log('clicked');
+        
     }
 }
