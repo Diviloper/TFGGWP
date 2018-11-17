@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { PageLogin } from 'src/pages/login/login';
 import { PageRegister } from 'src/pages/register/register';
 import { Routes, RouterModule } from '@angular/router';
+import { Navbar } from 'src/pages/navbar/navbar';
 
 
 const appRoutes: Routes = [
@@ -23,7 +24,10 @@ const appRoutes: Routes = [
 ]
 @NgModule({
   declarations: [
-    AppComponent, PageLogin, PageRegister
+    AppComponent, 
+    PageLogin, 
+    PageRegister,
+    Navbar,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
