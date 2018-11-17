@@ -33,6 +33,15 @@
         input {
             margin: 20px 0;
             height: 20px;
+            border: none;
+            border-radius: 20px;
+            text-align: center;
+            height: 40px;
+        }
+
+        p {
+            color: red;
+            font-weight: bold;
         }
     }
 
@@ -48,6 +57,8 @@
         button {
             width: 40%;
             margin: 20px;
+            border: none;
+            border-radius: 30px;
         }
     }
 }

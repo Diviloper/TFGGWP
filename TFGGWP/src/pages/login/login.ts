@@ -26,16 +26,13 @@ export class PageLogin {
                 console.log(data);
             },
             error => {
-                this.error = error;
+                this.error = error.message;
                 console.log(error.message);
             });
 
         if (this.error = '') {
             this.userService.updateUser(this.email, false);
             this.router.navigate(['/home']);
-        }
-        else {
-            console.log(this.error);
         }
     }
 }

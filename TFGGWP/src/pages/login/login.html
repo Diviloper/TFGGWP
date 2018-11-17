@@ -5,6 +5,7 @@
     <div class="login-input">
         <input type="text" placeholder="Email" [(ngModel)]="email"> 
         <input type="password" placeholder="Password" [(ngModel)]="password">
+        <p class="error" *ngIf="error">{{ error }}</p>
     </div>
     <div class="login-buttons">
         <button class="login-buttons-register" routerLink="/register">REGISTER</button>
