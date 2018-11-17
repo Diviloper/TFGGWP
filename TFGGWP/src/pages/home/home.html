@@ -1,1 +1,17 @@
 <navbar></navbar>
+
+<div class="home">
+  <button class="addTFG" (click)="nouTFG()">Crear TFG</button>
+  <div>
+    <input class="addTFG" type="text" *ngIf="add" placeholder="Titol" [(ngModel)]="title">
+    <input class="addTFG" type="text" *ngIf="add" placeholder="Email" [(ngModel)]="email">
+    <button class="addTFG" *ngIf="add" (click)="postTFG()">Penjar TFG</button>
+  </div>
+  <div>
+    <div class="tfg" *ngFor="let d of data">
+      <h3>Títol: {{d.title}}</h3>
+      <p *ngIf="d.emailProf">Correu del Professor: {{d.emailProf}}</p>
+      <p *ngIf="d.emailAlumne">Correu de l'alumne: {{d.emailAlumne}}</p>
+    </div>
+  </div>
+</div>
