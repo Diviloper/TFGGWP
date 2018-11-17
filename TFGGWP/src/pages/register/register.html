@@ -6,15 +6,20 @@
         <input type="email" placeholder="Email" [(ngModel)]="email">
         <input type="password" placeholder="Password" [(ngModel)]="password">
 
-      <div>
-        <input type="radio" [value]="false" [(ngModel)]="professor"> Estudiant
-      </div>
-      <div>
-        <input type="radio" [value]="true" [(ngModel)]="professor"> Professor
-
+      <div class="register-input-buttons">
+        <div class="register-input-buttons-pair">
+          <input type="radio" [value]="false" [(ngModel)]="professor" title="Estudiant">
+          <p>Estudiant</p>
+        </div>
+        <div class="register-input-buttons-pair">
+        <input type="radio" [value]="true" [(ngModel)]="professor" title="Professor">
+          <p>Professor</p>
+        </div>
     </div>
+
     <div class="register-buttons">
         <button class="register-buttons-register" (click)="onRegister()" >REGISTER</button>
+        <button class="register-buttons-back" (click)="onGoBack()">BACK</button>
     </div>
 </div>
 
