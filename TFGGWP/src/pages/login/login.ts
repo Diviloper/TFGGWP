@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserService } from '../services/login.service';
+import { UserService } from '../services/user.service';
+import { LoginService } from './login.service';
 
 @Component({
     selector: 'page-login',
@@ -11,12 +12,18 @@ export class PageLogin {
     email = '';
     password = '';
 
-    constructor(private router: Router, private userService: UserService) {
+    constructor(private router: Router,
+        private userService: UserService,
+        private loginService: LoginService) {
 
     }
 
     onLogin() {
         // mirar que email i password estiguin be
+        this.loginService.logIn(this.email, this.password)
+            .subscribe((data: any) => {
+                console.log(data);
+            })
         this.userService.updateUser(this.email, false);
         this.router.navigate(['/home']);
     }
