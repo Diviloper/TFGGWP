@@ -25,11 +25,11 @@ const appRoutes: Routes = [
       path: 'home',
       component: PageHome,
   }
-]
+];
 @NgModule({
   declarations: [
-    AppComponent, 
-    PageLogin, 
+    AppComponent,
+    PageLogin,
     PageRegister,
     Navbar,
     PageHome,
