@@ -1,8 +1,13 @@
 .navbar {
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
     display: flex;
     justify-content: space-around;
     align-items: center;
     height: 60px;
+    overflow: hidden;
 
     background-color: orangered;
 
@@ -11,5 +16,64 @@
         border: none;
         height: 100%;
         width: 33%;
+
+        color: white;
+        cursor: pointer;
+    }
+
+    .navbar {
+        overflow: hidden;
+        background-color: orangered;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    .navbar-dropdown {
+        float: right;
+        overflow: hidden;
+    }
+    
+    .navbar-dropdown .navbar-dropbtn {
+        cursor: pointer;
+        font-size: 16px;    
+        border: none;
+        outline: none;
+        color: orangered;
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+    }
+    
+    .navbar-dropdown:hover .navbar-dropbtn, .navbar-dropbtn:focus {
+        background-color: red;
+    }
+    
+    .navbar-dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        min-width: 70px;
+        height: 40px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1000;
+        right: 0;
+        bottom: -40px;
+    }
+    
+    .navbar-dropdown-content a {
+        float: none;
+        color: black;
+        //padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        
+    }
+    
+    .navbar-dropdown-content a:hover {
+        background-color: red;
+    }
+    
+    .show {
+        display: block;
     }
 }

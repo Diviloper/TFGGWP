@@ -1,5 +1,12 @@
 <div class="navbar">
     <button routerLink="/home">{{ title1 }}</button>
     <button routerLink="/home" *ngIf="!this.userService.esProfessor">{{ title2 }}</button>
-    <img class="left" src="#" class="dropdown">
+    <div class="navbar-dropdown">
+        <button class="navbar-dropbtn" (click)="showDropdown()">
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div id="myDropdown" class="navbar-dropdown-content">
+            <a (click)="onLogOut()">Tanca sessió</a>
+        </div>
+    </div>
 </div>

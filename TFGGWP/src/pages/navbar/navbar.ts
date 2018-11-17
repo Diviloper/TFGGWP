@@ -20,4 +20,9 @@ export class Navbar implements OnInit {
             this.title1 = 'TFGs sense professor';
         }
     }
+
+    showDropdown() {
+        document.getElementById('myDropdown').classList.toggle("show");
+        console.log('clicked');
+    }
 }
