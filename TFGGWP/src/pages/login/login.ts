@@ -10,5 +10,12 @@ export class PageLogin {
     email = '';
     password = '';
 
-    constructor(private router: Router) {}
+    constructor(private router: Router) {
+            
+    }
+
+    onLogin() {
+        // mirar que email i password estiguin be
+        this.router.navigate(['/home']);
+    }
 }
