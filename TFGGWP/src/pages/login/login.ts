@@ -12,6 +12,7 @@ export class PageLogin {
     email = '';
     password = '';
 
+    error = '';
     constructor(private router: Router,
         private userService: UserService,
         private loginService: LoginService) {
@@ -23,8 +24,18 @@ export class PageLogin {
         this.loginService.logIn(this.email, this.password)
             .subscribe((data: any) => {
                 console.log(data);
-            })
-        this.userService.updateUser(this.email, false);
-        this.router.navigate(['/home']);
+            },
+            error => {
+                this.error = error;
+                console.log(error.message);
+            });
+
+        if (this.error = '') {
+            this.userService.updateUser(this.email, false);
+            this.router.navigate(['/home']);
+        }
+        else {
+            console.log(this.error);
+        }
     }
 }
