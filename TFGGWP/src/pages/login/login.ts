@@ -1,29 +1,38 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
 import { LoginService } from './login.service';
+import { HomeService } from '../home/home.service';
 
 @Component({
     selector: 'page-login',
     templateUrl: './login.html',
     styleUrls: ['./login.scss']
 })
-export class PageLogin {
+export class PageLogin implements OnInit {
     email = '';
     password = '';
 
     error = '';
+    data: any;
     constructor(private router: Router,
         private userService: UserService,
         private loginService: LoginService) {
 
     }
 
+    ngOnInit() {
+    }
+
     onLogin() {
         // mirar que email i password estiguin be
-        this.loginService.logIn(this.email, this.password)
-            .subscribe((data: any) => {
-                console.log(data);
+        let is_prof; 
+         this.loginService.logIn(this.email, this.password)
+            .subscribe(d => {
+                this.data = d as any;
+                is_prof = this.data.is_professor;
+                this.userService.updateUser(this.email, is_prof);
+                console.log('Compovacio de si es professor: ' + is_prof);
             },
             error => {
                 this.error = error.message;
@@ -31,7 +40,7 @@ export class PageLogin {
             });
 
         if (this.error === '') {
-            this.userService.updateUser(this.email, false);
+            console.log('Login:' + is_prof);
             this.router.navigate(['/home']);
         }
     }

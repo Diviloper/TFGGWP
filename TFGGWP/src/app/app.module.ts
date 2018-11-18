@@ -32,7 +32,7 @@ const appRoutes: Routes = [
     path: 'others',
     component: PageOthersTFG,
   }, {
-    path: 'tfg/:id',
+    path: 'tfg/:title',
     component: PageDetails,
   }
 ];

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { HomeService } from '../home/home.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'page-other',
@@ -7,12 +9,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./othersTFG.scss']
 })
 export class PageOthersTFG {
+  data: any[] = [];
 
-  constructor(private router: Router) {
+  constructor(private router: Router,
+              private homeService: HomeService,
+              private userService: UserService) {
   }
 
-  gotToDetail(d) {
-    this.router.navigate([`/tfg/${d.id}`]);
+  ngOnInit() {
+    this.homeService.getTFGProfes().subscribe( (data: any) => this.data = data);
+  }
+
+  goToDetail(d) {
+    this.router.navigate([`/tfg/${d.title}`]);
   }
 
 }

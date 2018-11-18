@@ -1,11 +1,20 @@
 <navbar></navbar>
 
 <div class="details">
-  <div class="details-title">
-    <h2>{{title}}</h2>
-  </div>
-  <div class="details-mails">
-    <p>{{emailP}}</p>
-    <p>{{emailA}}</p>
-  </div>
+    <div class="details-title">
+        {{ data.title }}
+    </div>
+    <div class="details-buttons">
+        <button class="details-buttons" *ngIf="userService.email == data.creador" (click)="remove()">Eliminar</button>
+        <button class="details-buttons" *ngIf="esPotUnir()" (click)="unirse()">Unirse</button>
+    </div>
+    <div class="details-email">Professor Assignat: {{ msg.professor }}</div>
+    <div class="details-email">Alumne Assignat: {{ msg.alumne }}</div>
+    <div class="details-email">Creador: {{ data.creador }}</div>
+    <div class="details-description">
+        <p class="details-desc-text">Descripció:</p>
+        <input type="text" class="details-desc" [(ngModel)]="data.description">
+        <button class="details-desc-button" (click)="actualitzar()">Actualitzar</button>
+    </div>
+    
 </div>
