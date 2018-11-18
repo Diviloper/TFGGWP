@@ -4,7 +4,7 @@
   <div class="addTFG">
     <button class="addTFG-crear" (click)="nouTFG()">Crear TFG</button>
   </div>
-  <div class="modal">
+  <div class="modal" *ngIf="add">
     <input class="modal-title" type="text" *ngIf="add" placeholder="Titol" [(ngModel)]="title">
     <button class="modal-submit" *ngIf="add" (click)="postTFG()">Penjar TFG</button>
   </div>
