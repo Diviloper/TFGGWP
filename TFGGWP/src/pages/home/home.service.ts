@@ -9,10 +9,10 @@ export class HomeService {
   postTFG(username, title, isProf) {
     const body = {
       title: title,
-      is_Professor: true,
+      is_Professor: isProf,
       email: username
     };
-    return this.http.post(`http://localhost:3000/insert_TFG`, body);
+    return this.http.post(`http://localhost:3000/insert_tfg`, body);
   }
 
   getTFG(): Observable<any[]> {
