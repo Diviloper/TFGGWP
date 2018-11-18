@@ -19,6 +19,7 @@ export class PageHome implements OnInit {
   first = true;
 
   ngOnInit() {
+    if(this.userService.email === '') this.router.navigate([`/`]);
     console.log("OnInit");
     this.homeService.getTFG().subscribe(d => {
       this.data = d as any[];

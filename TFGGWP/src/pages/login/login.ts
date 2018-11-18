@@ -22,6 +22,7 @@ export class PageLogin implements OnInit {
     }
 
     ngOnInit() {
+        if(this.userService.email === '') this.router.navigate([`/`]);
     }
 
     onLogin() {

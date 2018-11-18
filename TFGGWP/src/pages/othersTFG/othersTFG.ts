@@ -18,6 +18,7 @@ export class PageOthersTFG {
 
   ngOnInit() {
     this.homeService.getTFGProfes().subscribe( (data: any) => this.data = data);
+    if(this.userService.email === '') this.router.navigate([`/`]);
   }
 
   goToDetail(d) {

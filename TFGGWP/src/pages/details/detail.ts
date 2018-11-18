@@ -30,6 +30,7 @@ export class PageDetails implements OnInit{
     }
 
     ngOnInit() {
+        if(this.userService.email === '') this.router.navigate([`/`]);
         this.route.params.subscribe(params => {
             this.title = params['title']; });
         this.homeService.getTFGByTitle(this.title).subscribe((data:any) => {
