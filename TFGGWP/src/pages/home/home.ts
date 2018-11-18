@@ -24,7 +24,7 @@ export class PageHome implements OnInit {
   }
 
   nouTFG() {
-    this.add = true;
+    this.add = !this.add;
   }
 
   postTFG() {
