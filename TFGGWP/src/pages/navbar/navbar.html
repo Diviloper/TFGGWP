@@ -6,6 +6,6 @@
         <button routerLink="/others">{{ title2 }}</button>
     </div>
     <div>
-        <button class="noborder" (click)="onLogOut()">Tanca Sessió</button>
+        <button class="noborder" routerLink="/">Tanca Sessió <br>({{userService.email}})</button>
     </div>
 </div>

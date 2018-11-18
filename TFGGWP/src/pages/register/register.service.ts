@@ -9,7 +9,7 @@ export class RegisterService {
     const body = {
       username: username,
       password: password,
-      professor: professor
+      is_professor: professor
     };
     return this.http.post(`http://localhost:3000/register`, body);
   }
