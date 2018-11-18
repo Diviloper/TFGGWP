@@ -12,6 +12,7 @@ import { PageHome } from 'src/pages/home/home';
 import { LoginService } from 'src/pages/login/login.service';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterService } from '../pages/register/register.service';
+import {HomeService} from '../pages/home/home.service';
 
 
 const appRoutes: Routes = [
@@ -44,7 +45,8 @@ const appRoutes: Routes = [
   exports: [RouterModule],
   providers: [UserService,
     LoginService,
-  RegisterService],
+  RegisterService,
+  HomeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -5,6 +5,7 @@
   align-items: center;
   overflow: hidden !important;
   height: 100vh;
+  color: white;
   font-family: Roboto, serif;
   background: linear-gradient(-135deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
   background-size: 400% 400%;
@@ -30,7 +31,10 @@
 
     input {
       margin: 20px 0;
-      height: 20px;
+      height: 40px;
+      border: none;
+      border-radius: 20px;
+      text-align: center;;
     }
     &-buttons {
       display: flex;
@@ -61,6 +65,8 @@
     button {
       width: 40%;
       margin: 20px;
+      border: none;
+      border-radius: 40px;
     }
   }
 

@@ -11,6 +11,6 @@ export class RegisterService {
       password: password,
       professor: professor
     };
-    return this.http.post(`http://localhost:4200/api/register`, body);
+    return this.http.post(`http://localhost:3000/register`, body);
   }
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {HomeService} from './home.service';
+import {UserService} from '../services/user.service';
 
 @Component({
   selector: 'page-home',
@@ -10,34 +12,15 @@ export class PageHome implements OnInit {
   data: any[];
   add = false;
   title: string;
-  email: string;
-  constructor(private router: Router) {
+  constructor(private router: Router,
+              private homeService: HomeService,
+              private userService: UserService) {
   }
 
   ngOnInit() {
-    this.data = [
-      {
-        title: 'Com fer una Web sense api per facilitar la trobada de professors i alumnes a l\'hora de fer TFG',
-        emailProf: 'profe1@upc.edu',
-        emailAlumne: ''
-      },
-      {
-        title: 'Com mantenir les flatulencies al recte sense que exploti',
-        emailProf: '',
-        emailAlumne: 'alumne1@hey.com'
-      },
-      {
-        title: 'Com manipular el temps atmosferic realitzant dances al voltant d\'una foguera',
-        emailProf: 'profe2@upc.edu',
-        emailAlumne: 'alumne2@upc.edu'
-      },
-      {
-        title: 'Com reviure al teu gat les 6 primeres vegades que mor',
-        emailProf: '',
-        emailAlumne: 'amodungatmort@hey.com'
-      }
-    ];
-    // TODO read data from DB
+    this.homeService.getTFG().subscribe(d => {
+      this.data = d as any[];
+    });
   }
 
   nouTFG() {
@@ -45,13 +28,21 @@ export class PageHome implements OnInit {
   }
 
   postTFG() {
-    this.data.push({
-      title: this.title,
-      emailProf: '',
-      emailAlumne: this.email
-    });
-    this.add = false;
+    this.homeService.postTFG(this.userService.email, this.title, this.userService.esProfessor);
+    if (this.userService.esProfessor) {
+      this.data.push({
+        title: this.title,
+        alumne: '',
+        professor: this.userService.email
+      });
+    } else {
+      this.data.push({
+        title: this.title,
+        alumne: this.userService.email,
+        professor: ''
+      });
+    }
     this.title = '';
-    this.email = '';
+    this.add = false;
   }
 }
