@@ -16,6 +16,6 @@ export class HomeService {
   }
 
   getTFG(): Observable<any[]> {
-    return this.http.get<any[]>('http://localhost:3000/insert_TFG');
+    return this.http.get<any[]>('http://localhost:3000/get_tfg');
   }
 }
