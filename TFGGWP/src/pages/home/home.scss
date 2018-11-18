@@ -5,8 +5,10 @@
 }
 
 .tfg{
-  margin-left:10px;
+  margin:20px;
   font-family: 'Roboto', sans-serif;
+  border-bottom: 1px solid orangered;
+
 }
 
 p{
@@ -14,5 +16,26 @@ p{
 }
 
 .addTFG{
-  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  &-crear {
+    margin: 20px;
+    padding: 10px;
+    width: 50%;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0px 2px 1px gray;
+  }
+}
+
+.modal {
+
+  &-title {
+
+  }
+
+  &-submit {
+    
+  }
 }
