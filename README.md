@@ -19,12 +19,12 @@ cd API
 npm install
 node app.js
 ```
-Lets go back to the main folder
+Lets go back to the main folder  
 ```cd .. ```
 
 Finally we can launch the main program 
 ```
 cd TFGGWP
-npp install
+npm install
 ng serve
 ```
