@@ -11,7 +11,7 @@ import {UserService} from '../services/user.service';
 export class PageHome implements OnInit {
   data: any[];
   add = false;
-  title: string;
+  title = '';
   constructor(private router: Router,
               private homeService: HomeService,
               private userService: UserService) {
@@ -28,6 +28,11 @@ export class PageHome implements OnInit {
   }
 
   postTFG() {
+    if (this.title === '') {
+      console.log('HEy');
+      this.add = false;
+      return;
+    }
     this.homeService.postTFG(this.userService.email, this.title, this.userService.esProfessor);
     if (this.userService.esProfessor) {
       this.data.push({
