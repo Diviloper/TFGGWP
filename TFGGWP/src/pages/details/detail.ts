@@ -18,8 +18,10 @@ export class PageDetails implements OnInit{
         professor: '',
         alumne: '',
         creador:'',
-        description:''
+        description:'',
+        comments: []
     }
+    comment_input: string;
     title: number;
     constructor(private homeService:HomeService,
         private userService:UserService,
@@ -41,7 +43,8 @@ export class PageDetails implements OnInit{
             else this.msg.alumne = data.alumne;
             this.data.creador = data.creador;
             this.data.description = data.description;
-            console.log(data.description);
+            this.data.comments = data.comments;
+            console.log("data:" + this.data.comments);
         });
     }
 
@@ -52,6 +55,11 @@ export class PageDetails implements OnInit{
 
     unirse() {
         this.homeService.addUserTFG(this.data.title, this.userService.email, this.userService.esProfessor).subscribe();
+        if(this.userService.esProfessor){
+            this.data.professor = this.userService.email;
+        } else {
+            this.data.alumne = this.userService.email;
+        }
     }
 
     actualitzar() {
@@ -60,5 +68,14 @@ export class PageDetails implements OnInit{
 
     esPotUnir() {
          return this.userService.email != this.data.professor && this.userService.email != this.data.alumne
+    }
+
+    addComment() {
+        this.homeService.addComentTFG(this.data.title, this.userService.email, this.comment_input).subscribe();
+        this.data.comments.push({
+            name: this.userService.email,
+            comm: this.comment_input
+        })
+        this.comment_input = '';
     }
 }

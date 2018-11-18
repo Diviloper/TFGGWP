@@ -16,5 +16,15 @@
         <input type="text" class="details-desc" [(ngModel)]="data.description">
         <button class="details-desc-button" (click)="actualitzar()">Actualitzar</button>
     </div>
+
+    <div class="details-comentaris">
+        <div *ngFor="let comment of data.comments">
+            <div>{{comment.name}}:{{comment.comm}}</div>
+        </div>
+        <div *ngIf="!esPotUnir()">
+        <input type="text" class="details-comentaris-input" placeholder="Nou comentari" [(ngModel)]="comment_input">
+        <button class="details-comentaris-input" (click)="addComment()">Afegir</button>
+        </div>
+    </div>
     
 </div>

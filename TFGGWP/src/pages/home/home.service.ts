@@ -52,4 +52,13 @@ export class HomeService {
     }
     return this.http.post('http://localhost:3000/add_tfg_description', body);
   }
+
+  addComentTFG(title, user, comment) {
+    const body = {
+      title: title,
+      username: user,
+      comment: comment
+    }
+    return this.http.post('http://localhost:3000/add_comment_to_tfg', body);
+  }
 }

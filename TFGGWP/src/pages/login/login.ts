@@ -32,16 +32,11 @@ export class PageLogin implements OnInit {
                 this.data = d as any;
                 is_prof = this.data.is_professor;
                 this.userService.updateUser(this.email, is_prof);
-                console.log('Compovacio de si es professor: ' + is_prof);
+                this.router.navigate(['/home']);
             },
             error => {
                 this.error = error.message;
-                console.log(error.message);
+                console.log("This is error at login: " + error.message);
             });
-
-        if (this.error === '') {
-            console.log('Login:' + is_prof);
-            this.router.navigate(['/home']);
-        }
     }
 }
