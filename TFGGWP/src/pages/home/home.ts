@@ -33,7 +33,10 @@ export class PageHome implements OnInit {
   ngOnInit() {
     this.homeService.getTFG().subscribe(d => {
       this.data = d as any[];
-    });
+    },
+      error => {
+        this.data = [];
+      });
   }
 
   nouTFG() {
