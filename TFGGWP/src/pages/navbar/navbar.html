@@ -3,9 +3,9 @@
         <button routerLink="/home">{{ title1 }}</button>
     </div>
     <div>
-        <button routerLink="/home" *ngIf="this.userService.esProfessor">{{ title2 }}</button>
+        <button routerLink="/others">{{ title2 }}</button>
     </div>
     <div>
-        <button (click)="onLogOut()">Tanca Sessió</button>
+        <button class="noborder" (click)="onLogOut()">Tanca Sessió</button>
     </div>
 </div>

@@ -7,21 +7,11 @@ import { Router } from '@angular/router';
     templateUrl: './navbar.html',
     styleUrls: ['./navbar.scss']
 })
-export class Navbar implements OnInit {
-    title1 = 'TFGs';
-    title2 = 'Professors';
+export class Navbar {
+    title1 = 'Els meus TFGs';
+    title2 = 'TFGs proposats';
 
     constructor(private userService: UserService, private router: Router) {
 
-    }
-
-    ngOnInit() {
-        if (this.userService.esProfessor) {
-            this.title1 = 'TFGs sense professor';
-        }
-    }
-
-    showDropdown() {
-        
     }
 }

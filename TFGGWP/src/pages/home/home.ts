@@ -50,4 +50,8 @@ export class PageHome implements OnInit {
     this.title = '';
     this.add = false;
   }
+
+  goToDetail(d: any) {
+    
+  }
 }

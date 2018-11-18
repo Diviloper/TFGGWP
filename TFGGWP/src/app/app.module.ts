@@ -13,6 +13,8 @@ import { LoginService } from 'src/pages/login/login.service';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterService } from '../pages/register/register.service';
 import {HomeService} from '../pages/home/home.service';
+import { PageOthersTFG } from 'src/pages/othersTFG/othersTFG';
+import { PageDetails } from 'src/pages/details/detail';
 
 
 const appRoutes: Routes = [
@@ -20,12 +22,18 @@ const appRoutes: Routes = [
     path: '',
     component: PageLogin
   }, {
-      path: 'register',
-      component: PageRegister,
+    path: 'register',
+    component: PageRegister,
 
   }, {
-      path: 'home',
-      component: PageHome,
+    path: 'home',
+    component: PageHome,
+  }, {
+    path: 'others',
+    component: PageOthersTFG,
+  }, {
+    path: 'tfg/:id',
+    component: PageDetails,
   }
 ];
 @NgModule({
@@ -35,6 +43,8 @@ const appRoutes: Routes = [
     PageRegister,
     Navbar,
     PageHome,
+    PageOthersTFG,
+    PageDetails,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

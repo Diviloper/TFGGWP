@@ -1,0 +1,11 @@
+<navbar></navbar>
+
+<div class="home">
+    <div>
+        <div class="tfg" *ngFor="let d of data" (click)="goToDetail(d)">
+        <h3>{{d.title}}</h3>
+        <p *ngIf="d.emailProf">Correu del Professor: {{d.emailProf}}</p>
+        <p *ngIf="d.emailAlumne">Correu de l'alumne: {{d.emailAlumne}}</p>
+        </div>
+    </div>
+</div>

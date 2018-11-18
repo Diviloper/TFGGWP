@@ -5,11 +5,13 @@
     <button class="addTFG-crear" (click)="nouTFG()">Crear TFG</button>
   </div>
   <div class="modal" *ngIf="add">
-    <input class="modal-title" type="text" *ngIf="add" placeholder="Titol" [(ngModel)]="title">
-    <button class="modal-submit" *ngIf="add" (click)="postTFG()">Penjar TFG</button>
+    <div class="modal-content">
+      <input class="modal-content-title" type="text" *ngIf="add" placeholder="Titol" [(ngModel)]="title">
+      <button class="modal-content-submit" *ngIf="add" (click)="postTFG()">Penjar TFG</button>
+    </div>
   </div>
   <div>
-    <div class="tfg" *ngFor="let d of data">
+    <div class="tfg" *ngFor="let d of data" (click)="goToDetail(d)">
       <h3>{{d.title}}</h3>
       <p *ngIf="d.emailProf">Correu del Professor: {{d.emailProf}}</p>
       <p *ngIf="d.emailAlumne">Correu de l'alumne: {{d.emailAlumne}}</p>
