@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'page-other',
@@ -7,11 +8,11 @@ import { Component } from '@angular/core';
 })
 export class PageOthersTFG {
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
-  gotToDetail(d: any) {
-
+  gotToDetail(d) {
+    this.router.navigate([`/tfg/${d.id}`]);
   }
 
 }

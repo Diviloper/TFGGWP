@@ -30,7 +30,7 @@ export class PageLogin {
                 console.log(error.message);
             });
 
-        if (this.error = '') {
+        if (this.error === '') {
             this.userService.updateUser(this.email, false);
             this.router.navigate(['/home']);
         }

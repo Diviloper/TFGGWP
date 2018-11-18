@@ -9,7 +9,20 @@ import {UserService} from '../services/user.service';
   styleUrls: ['./home.scss']
 })
 export class PageHome implements OnInit {
-  data: any[];
+  data: any[] = [
+    {
+      id: 1,
+      title: 'T1',
+      emailProf: 'prof@asdf',
+      emailAlumne: 'est@alskdjfasd'
+    },
+    {
+      id: 2,
+      title: 'T2',
+      emailProf: 'prof@asdf',
+      emailAlumne: 'est@alskdjfasd'
+    }
+  ];
   add = false;
   title = '';
   constructor(private router: Router,
@@ -51,7 +64,7 @@ export class PageHome implements OnInit {
     this.add = false;
   }
 
-  goToDetail(d: any) {
-    
+  goToDetail(d) {
+    this.router.navigate([`/tfg/${d.id}`]);
   }
 }
